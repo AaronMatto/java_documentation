@@ -1,6 +1,3 @@
-
-//  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
-
 // CONTENTS: Overloaded methods, printf, final keyword
 
 public class Java_tutorial_five {
