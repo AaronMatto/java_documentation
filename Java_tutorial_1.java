@@ -15,7 +15,7 @@
 
 import java.util.Scanner; // see line 91. Required for us to store user input.
 
-public class Java_tutorial_one {
+public class Java_tutorial_1 {
 
   public static void main(String[] args) {
 

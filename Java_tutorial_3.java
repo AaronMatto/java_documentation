@@ -1,7 +1,7 @@
 // CONTENTS: while loops, for loops, nested loops, arrays, 2D arrays, String methods
 import java.util.Scanner;
 
-public class Java_tutorial_three {
+public class Java_tutorial_3 {
   public static void main (String[] args) {
     // LOOPS
       // While loops. Continue to perform a block of code while a conidition is true.

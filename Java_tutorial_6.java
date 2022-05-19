@@ -1,7 +1,7 @@
 //CONTENTS: Intro to OOP, initialising instances and how to use 'self'
 
 
-public class Java_tutorial_six {
+public class Java_tutorial_6 {
 
   public static void main(String args[]){
     // object = instance of a class that may contain attributes(instance variables) and methods to model behaviour

@@ -6,7 +6,7 @@ import java.util.Random;
 
 
 
-public class Java_tutorial_seven {
+public class Java_tutorial_7 {
   public static void main(String args[]) {
     // SCOPE
     DiceRoller dice = new DiceRoller(); // creating the new instance automatically outputs the random number from roll();

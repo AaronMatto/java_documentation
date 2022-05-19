@@ -2,7 +2,7 @@
 
 import java.util.ArrayList;
 
-public class Java_tutorial_four {
+public class Java_tutorial_4 {
 
   public static void main (String[] args) {
     // Wrapper Classes

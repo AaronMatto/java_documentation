@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.util.Random; // line 80. This imports the random class and its native methods
 
 
-public class Java_tutorial_two {
+public class Java_tutorial_2 {
 
   public static void main(String[] args) {
     // Expressions
