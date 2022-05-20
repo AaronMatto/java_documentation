@@ -1,4 +1,4 @@
-// CONTENTS: Encapsulation, Copy Objects,
+// CONTENTS: Encapsulation, Copy Objects, Interface
 
 public class Java_tutorial_11 {
 
@@ -57,7 +57,20 @@ public class Java_tutorial_11 {
       // line 121.
       Car car3 = new Car(car1);
       System.out.println(car3); // a new distinct car.
+      System.out.println();
 
+    // INTERFACE
+      // interface = a template that can be applied to a class. Similar to inheritance, but specifies
+      //             what a class has or must do. Classes can apply more than one interface, but inheritance
+      //             is limited to one super.
+      Rabbit rabbit = new Rabbit();
+      rabbit.flee();
+      Hawk hawk = new Hawk();
+      hawk.hunt();
+      System.out.println();
+      Fish fish = new Fish();
+      fish.hunt();
+      fish.flee();
 
   }
 }
@@ -125,7 +138,59 @@ public class Car {
     this.copy(car_instance);
   }
   // we simply call our copy method.
+}
 
 
+// INTERFACES
+public class Rabbit implements Prey {
+  // to allow a class to use an interface we've already defined, we simply write 'implements INTERFACE_NAME'
+
+  @Override // line 185
+  public void flee() {
+    System.out.println("Rabbit is fleeing");
+  }
+}
+
+
+
+public class Hawk implements Predator {
+
+  @Override
+  public void hunt(){
+    System.out.println("The hawk is hunting");
+  }
+
+}
+
+public class Fish implements Prey, Predator {
+  // Fish can be both prey and predator so the class uses two interfaces as above!
+  // this is the key diff between inheritance and interfaces. A class can apply multiple interfaces
+  // but it can only inherit from one super class.
+
+  @Override
+  public void flee(){
+    System.out.println("Fish swims away to flee");
+  }
+
+  @Override
+  public void hunt(){
+    System.out.println("Fish is hunting");
+  }
+}
+
+
+// to create an interface we just write 'interface' instead of class
+public interface Prey {
+
+  void flee(); // if you declare a method in an interface it works like an abstract method.
+  // we need to define what the method does in the class that uses this interface as we don't define
+  // the method body in interfaces/abstract methods
+
+}
+
+
+public interface Predator {
+
+  void hunt();
 
 }
