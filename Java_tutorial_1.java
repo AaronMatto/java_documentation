@@ -134,7 +134,7 @@ public class Java_tutorial_1 {
 
         // How do we fix this?
         // well, we clear our scanner first after newInt(); to get rid of the \n character that gets added by default
-        // and left over. How do we do this? Add the following line to line 112:
+        // and left over. How do we do this? Add the following line to line 113:
         // example_scanner_two.nextLine();
         // doing this clears out our example_scanner_two object, getting rid of the leftover \n
   }
