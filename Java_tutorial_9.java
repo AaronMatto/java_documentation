@@ -1,7 +1,6 @@
 // CONTENTS: Inheritance, Method Overriding, Super Keyword
 
 
-
 public class Java_tutorial_9 {
   public static void main(String args[]){
     // INHERITANCE
