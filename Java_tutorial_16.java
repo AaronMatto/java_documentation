@@ -3,12 +3,15 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Dimension;
-// CONTENTS: Border layouts, margins, nested panels,
+import java.awt.FlowLayout;
+import javax.swing.JButton;
+
+// CONTENTS: BorderLayouts, margins, nested panels, FlowLayout
 
 public class Java_tutorial_16 {
   // Border layouts
   public static void main (String args[]) {
-    // Layout Manager = defines the natural layout for components within a container (panel)
+    // Layout Manager = defines the natural layout for components within a container (panel or frame)
     // There are 3 common managers:
 
     // BorderLayout = A BorderLayout places components in five areas: NORTH, SOUTH, EAST, WEST, CENTER
@@ -79,5 +82,50 @@ public class Java_tutorial_16 {
     panelCenter.add(panel3, BorderLayout.EAST);
     panelCenter.add(panel4, BorderLayout.SOUTH);
     panelCenter.add(panel5, BorderLayout.CENTER);
+
+
+    // FLOW LAYOUT
+    // FlowLayout = a layout manager that places components in a row, sized at their preferred size. If the
+    //              horizontal space in the container is too small, the FlowLayout class uses the next
+    //              available row. We can see an exmaple of a flowlayout used on a panel in a frame below.
+
+    // new frame
+    JFrame frame2 = new JFrame();
+    frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    frame2.setSize(500,500);
+    frame2.setLayout(new FlowLayout(FlowLayout.CENTER,10,10));
+    // in the brackets of new FlowLayout() we can specify the alignment. LEADING will move the component
+    // to the left, CENTER to center and TRAILING to move component to the right.
+    // Can also set the vertical and horizontal gaps between components too.
+
+    // NOTE: if we added the buttons to the frame NOT the panel then they will appear in the frame.
+    // If we then resize the frame the buttons will dynamically create more or less rows as they need them
+    // based on the size of the frame. This doesn't happen when the buttons are inside a panel, but it would
+    // happen for multiple panels.
+
+    // new panel
+    JPanel panel = new JPanel();
+    panel.setPreferredSize(new Dimension(250, 250));
+    panel.setBackground(Color.orange);
+    panel.setLayout(new FlowLayout()); // HERE
+
+
+    // add buttons to panel
+    panel.add(new JButton("1")); // this is a quicker way of creating a button as opposed to creating a
+    // variable for the button JButton button = new JButton(); and then doing panel.add(button)
+    panel.add(new JButton("2"));
+    panel.add(new JButton("3"));
+    panel.add(new JButton("4"));
+    panel.add(new JButton("5"));
+    panel.add(new JButton("6"));
+    panel.add(new JButton("7"));
+    panel.add(new JButton("8"));
+    panel.add(new JButton("9"));
+
+    // add panel to frame and make frame visible
+    frame2.add(panel);
+    frame2.setVisible(true);
+    // As can be seen, the number of buttons exceeds the width of the panel. If we make the panel narrower,
+    // then the buttons will form more rows. Make it wider and the buttons will form less rows.
   }
 }
