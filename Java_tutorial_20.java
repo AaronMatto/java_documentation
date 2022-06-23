@@ -11,7 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JRadioButton;
 import javax.swing.JComboBox;
 
-// CONTENTS: JCheckBox, JRadioButtons
+// CONTENTS: JCheckBox, JRadioButtons, JComboBox
 public class Java_tutorial_20 {
 
   public static void main(String args[]) {
