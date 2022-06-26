@@ -8,7 +8,6 @@ import javax.swing.event.*;
 import java.awt.Color;
 
 public class Java_tutorial_23 {
-
   public static void main(String args[]) {
 
     // Mouse Listener Interface
