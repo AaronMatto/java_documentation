@@ -6,7 +6,7 @@ import javax.swing.*;
 import javax.swing.event.*;
 import java.io.File;
 
-// CONTENTS: JFileChooser, JColorChooser,
+// CONTENTS: JFileChooser, JColorChooser, KeyListener
 
 
 public class Java_tutorial_22 {
@@ -16,7 +16,10 @@ public class Java_tutorial_22 {
     // MyFrame frame = new MyFrame();
 
     // JColorChooser = A GUI mechanism that lets a user choose a color
-    MyFrame2 frame2 = new MyFrame2();
+    // MyFrame2 frame2 = new MyFrame2();
+
+    // KeyListners
+    MyFrame3 frame3 = new MyFrame3();
 
   }
 }
@@ -98,6 +101,76 @@ public class MyFrame2 extends JFrame implements ActionListener {
       // label.setForeground(color); // this sets the color of the label text to the user choice
       label.setBackground(color);
     }
+  }
+
+}
+
+
+public class MyFrame3 extends JFrame implements KeyListener {
+
+  JLabel label;
+
+  MyFrame3() {
+    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    this.setLayout(null); // as we're going to manually move components via keystroke
+    this.setSize(500,500);
+
+    this.addKeyListener(this); // to make this frame respond to key events
+
+    label = new JLabel();
+    label.setBounds(0,0,100,100);
+    label.setBackground(Color.red);
+    label.setOpaque(true); // have to set opacity for background color to display
+
+    this.add(label);
+
+    this.getContentPane().setBackground(Color.black); // set background of frame
+
+    this.setVisible(true);
+  }
+
+  @Override
+  public void keyTyped(KeyEvent e) {
+    // called when a key is typed, gives us a character output of what was pressed
+    switch(e.getKeyChar()) {
+      case 'a': label.setLocation(label.getX() - 10, label.getY()); // This moves our label left by 1 pixel when the user presses 'a'
+        break;
+      case 'd': label.setLocation(label.getX() + 10, label.getY()); // moves our label right by 1 pixel when 'd' is typed/pressed
+        break;
+      case 'w': label.setLocation(label.getX(), label.getY() - 10); // moves our label up by 1 pixel when 'w' is typed/pressed. Note that moving up is - !
+        break;
+      case 's': label.setLocation(label.getX(), label.getY() + 10); // moves our label down by 1 pixel when 's' is typed/pressed
+        break;
+    }
+  }
+
+  @Override
+  public void keyPressed(KeyEvent e) {
+    // invoked when a key is pressed down. Uses a keycode and outputs an integer associated with
+    // that key. The associated integer is the keycode.
+    // Here we do the same, move the label by one pixel up/down/left/right except we use the arrow keys.
+    // Arrow keys aren't a character so we use the keyCode(); method
+    switch (e.getKeyCode()) {
+      case 37:
+        label.setLocation(label.getX() - 10, label.getY()); // This moves our label left by 1 pixel when the user presses                                                // 'a'
+        break;
+      case 39:
+        label.setLocation(label.getX() + 10, label.getY()); // moves our label right by 1 pixel when 'd' is typed/pressed
+        break;
+      case 38:
+        label.setLocation(label.getX(), label.getY() - 10); // moves our label up by 1 pixel when 'w' is typed/pressed
+        break;
+      case 40:
+        label.setLocation(label.getX(), label.getY() + 10); // moves our label down by 1 pixel when 's' is typed/pressed
+        break;
+    }
+  }
+
+  @Override
+  public void keyReleased(KeyEvent e) {
+    // invoked when a key is released
+    System.out.println("You released key: " + e.getKeyChar());
+    System.out.println("You released KEY CODE: " + e.getKeyCode());
   }
 
 }
